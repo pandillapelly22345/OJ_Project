@@ -1,7 +1,7 @@
 const Queue = require("bull");
 const moment = require("moment");
 const Job = require("./models/Job");
-const Problem = require("./models/problem");
+const Problem = require("./models/Problem");
 const { executeCpp } = require("./code-execution/executeCpp");
 const { executePython } = require("./code-execution/executePython");
 

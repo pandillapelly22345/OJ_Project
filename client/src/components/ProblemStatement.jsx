@@ -20,7 +20,7 @@ const ProblemStatement = ({ id }) => {
 
   useEffect(() => {
     const fetchProblem = async () => {
-      const res = await fetch(`http://localhost:5000/api/problem/${id}`);
+      const res = await fetch(`http://51.20.53.208:5000/api/problem/${id}`);
       const data = await res.json();
       setProblem(data);
     };

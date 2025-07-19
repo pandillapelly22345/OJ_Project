@@ -11,7 +11,7 @@ const EditProblem = () => {
 
   useEffect(() => {
     const fetchProblem = async () => {
-      const res = await fetch(`http://localhost:5000/api/problem`);
+      const res = await fetch(`http://51.20.53.208:5000/api/problem`);
       const data = await res.json();
       const found = data.find((p) => p._id === id);
       setProblem(found);
@@ -24,7 +24,7 @@ const EditProblem = () => {
     e.preventDefault();
     const token = await getToken();
 
-    const res = await fetch(`http://localhost:5000/api/problem/${id}`, {
+    const res = await fetch(`http://51.20.53.208:5000/api/problem/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

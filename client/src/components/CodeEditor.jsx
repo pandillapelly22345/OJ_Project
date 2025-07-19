@@ -97,7 +97,7 @@ const CodeEditor = ({ testcases = [], problemId }) => {
     setShowAiPopup(true);
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/run/ai-review", {
+      const { data } = await axios.post("http://51.20.53.208:5000/api/run/ai-review", {
         code,
       });
 
@@ -120,7 +120,7 @@ const CodeEditor = ({ testcases = [], problemId }) => {
     setReviewText("");
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/ai/code-review", {
+      const { data } = await axios.post("http://51.20.53.208:5000/api/ai/code-review", {
         code,
       });
 
@@ -140,7 +140,7 @@ const CodeEditor = ({ testcases = [], problemId }) => {
     const input = inputMode === "sample" ? sampleInput : customInput;
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/run", {
+      const { data } = await axios.post("http://51.20.53.208:5000/api/run", {
         code,
         language,
         input,
@@ -153,7 +153,7 @@ const CodeEditor = ({ testcases = [], problemId }) => {
 
       const poll = setInterval(async () => {
         const { data: statusData } = await axios.get(
-          `http://localhost:5000/api/run/status/${jobId}`
+          `http://51.20.53.208:5000/api/run/status/${jobId}`
         );
         const job = statusData.job;
 

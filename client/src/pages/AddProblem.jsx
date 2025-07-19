@@ -32,7 +32,7 @@ const AddProblem = () => {
     }
     const token = await getToken();
     try {
-      const res = await fetch("http://localhost:5000/api/problem/add", {
+      const res = await fetch("http://51.20.53.208:5000/api/problem/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const AddProblem = () => {
     setAiResult("");
 
     try {
-      const { data } = await axios.post(`http://localhost:5000/api/ai/${type}`, {
+      const { data } = await axios.post(`http://51.20.53.208:5000/api/ai/${type}`, {
         statement: statement, // get this from your form input state
       });
 

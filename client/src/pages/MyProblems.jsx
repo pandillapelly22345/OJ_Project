@@ -7,7 +7,7 @@ const MyProblems = () => {
 
   const fetchMyProblems = async () => {
     const token = await getToken();
-    const res = await fetch("http://localhost:5000/api/problem/my-problems", {
+    const res = await fetch("http://51.20.53.208:5000/api/problem/my-problems", {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -16,7 +16,7 @@ const MyProblems = () => {
 
   const deleteProblem = async (id) => {
     const token = await getToken();
-    const res = await fetch(`http://localhost:5000/api/problem/${id}`, {
+    const res = await fetch(`http://51.20.53.208:5000/api/problem/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
