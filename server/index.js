@@ -11,7 +11,11 @@ dotenv.config();
 require("./jobQueue");
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ 
+  origin: ["http://localhost:5173", "https://oj-project-green.vercel.app"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Optional: for testing route

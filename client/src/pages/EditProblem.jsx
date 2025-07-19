@@ -11,10 +11,20 @@ const EditProblem = () => {
 
   useEffect(() => {
     const fetchProblem = async () => {
-      const res = await fetch(`http://51.20.53.208:5000/api/problem`);
-      const data = await res.json();
-      const found = data.find((p) => p._id === id);
-      setProblem(found);
+      const token = await getToken();
+      const res = await fetch(`http://51.20.53.208:5000/api/problem/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        setProblem(data);
+      } else {
+        console.error("Problem not found or unauthorized");
+        alert("❌ Problem not found or you're not authorized.");
+      }
     };
 
     fetchProblem();
